@@ -1,0 +1,17 @@
+```powershell id="mq22ah"
+Set-Location "C:\Users\Aasiya\OneDrive\Documents\GitHub\Wasila"
+
+git config --global user.name "mjaffry01"
+git config --global user.email "mjaffry02@gmail.com"
+
+git status
+
+git add .
+
+git commit -m "Updated Wasila website"
+
+git push origin main
+
+Write-Host ""
+Write-Host "Wasila website pushed successfully to GitHub!" -ForegroundColor Green
+```
