@@ -676,10 +676,12 @@
             .replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "");
     }
 
-    function sendWhatsApp(productName) {
-        const message = encodeURIComponent(`Hi, I am interested in this product: ${productName}`);
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-    }
+const phoneNumber = "919650068218";
+
+function sendWhatsApp(productName) {
+    const message = encodeURIComponent(`Hi, I am interested in this product: ${productName}`);
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+}
 
     function renderProducts() {
         for (const [id, category] of Object.entries(categories)) {
