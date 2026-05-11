@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasila - Tabarruk & Islamic Gathering Marketplace</title>
+
+    <style>
+        :root {
+            --primary: #0f6b4f;
+            --primary-soft: #1f8a67;
+            --dark: #063d2f;
+            --gold: #d6a84f;
+            --gold-soft: #f6e7bd;
+            --cream: #fbf7ed;
+            --bg: #f3efe3;
+            --text: #25342f;
+            --muted: #65736d;
+            --card: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(214,168,79,0.18), transparent 30%),
+                radial-gradient(circle at top right, rgba(15,107,79,0.16), transparent 32%),
+                linear-gradient(180deg, var(--cream), var(--bg));
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.05;
+            background-image:
+                linear-gradient(30deg, var(--dark) 12%, transparent 12.5%, transparent 87%, var(--dark) 87.5%, var(--dark)),
+                linear-gradient(150deg, var(--dark) 12%, transparent 12.5%, transparent 87%, var(--dark) 87.5%, var(--dark)),
+                linear-gradient(30deg, var(--dark) 12%, transparent 12.5%, transparent 87%, var(--dark) 87.5%, var(--dark)),
+                linear-gradient(150deg, var(--dark) 12%, transparent 12.5%, transparent 87%, var(--dark) 87.5%, var(--dark));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+            z-index: -1;
+        }
+
+        .page-wrap {
+            padding: 24px;
+        }
+
+        header {
+            max-width: 1180px;
+            margin: 0 auto 28px;
+            text-align: center;
+            padding: 44px 24px 36px;
+            border-radius: 28px;
+            background:
+                linear-gradient(135deg, rgba(6,61,47,0.96), rgba(15,107,79,0.94)),
+                radial-gradient(circle at top, rgba(214,168,79,0.35), transparent 42%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(6,61,47,0.22);
+            border: 1px solid rgba(214,168,79,0.45);
+        }
+
+        header::before,
+        header::after {
+            content: "۞";
+            position: absolute;
+            font-size: 150px;
+            color: rgba(246,231,189,0.10);
+            line-height: 1;
+        }
+
+        header::before {
+            left: 22px;
+            top: -18px;
+        }
+
+        header::after {
+            right: 22px;
+            bottom: -36px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(2.2rem, 5vw, 4.8rem);
+            letter-spacing: 1px;
+            font-weight: 800;
+            color: #fff8df;
+            text-shadow: 0 3px 14px rgba(0,0,0,0.2);
+        }
+
+        header .subtitle {
+            margin: 10px auto 0;
+            max-width: 760px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #f8edcf;
+        }
+
+        .hero-writeup {
+            max-width: 980px;
+            margin: 22px auto 0;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(246,231,189,0.34);
+            border-radius: 22px;
+            padding: 22px;
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-writeup p {
+            margin: 8px 0;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #fffaf0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: rgba(214,168,79,0.20);
+            color: #fff0c7;
+            border: 1px solid rgba(214,168,79,0.55);
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 28px auto 32px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+        }
+
+        .tab-btn {
+            padding: 13px 24px;
+            border: 1px solid rgba(15,107,79,0.15);
+            background: rgba(255,255,255,0.86);
+            cursor: pointer;
+            border-radius: 999px;
+            font-weight: 700;
+            color: var(--dark);
+            box-shadow: 0 8px 20px rgba(6,61,47,0.08);
+            transition: all 0.25s ease;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(214,168,79,0.65);
+            box-shadow: 0 12px 26px rgba(6,61,47,0.13);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: #fff8df;
+            border-color: var(--gold);
+            box-shadow: 0 12px 28px rgba(15,107,79,0.28);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--card);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(6,61,47,0.11);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            cursor: pointer;
+            border: 1px solid rgba(214,168,79,0.28);
+            position: relative;
+        }
+
+        .product-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 18px;
+            pointer-events: none;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, rgba(214,168,79,0.50), transparent, rgba(15,107,79,0.28)) border-box;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 34px rgba(6,61,47,0.18);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card img,
+        .product-card video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            background: #eee;
+        }
+
+        .product-info {
+            padding: 16px;
+            text-align: center;
+            background:
+                linear-gradient(180deg, #ffffff, #fffaf0);
+        }
+
+        .product-info h3 {
+            margin: 0;
+            font-size: 0.98rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .product-info::after {
+            content: "Click for inquiry";
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--dark);
+            background: var(--gold-soft);
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: grid;
+        }
+
+        .about-us {
+            max-width: 1050px;
+            margin: 46px auto 18px;
+            padding: 32px 28px;
+            border-radius: 26px;
+            background:
+                linear-gradient(135deg, #ffffff, #fff8e7);
+            box-shadow: 0 14px 32px rgba(6,61,47,0.12);
+            border: 1px solid rgba(214,168,79,0.38);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-us::before {
+            content: "☪";
+            position: absolute;
+            left: -6px;
+            top: -34px;
+            font-size: 130px;
+            color: rgba(214,168,79,0.11);
+            transform: rotate(-12deg);
+        }
+
+        .about-us h2 {
+            margin: 0 0 14px;
+            color: var(--dark);
+            font-size: 2rem;
+        }
+
+        .about-us p {
+            margin: 9px auto;
+            max-width: 880px;
+            color: var(--text);
+            line-height: 1.75;
+            font-size: 1.03rem;
+        }
+
+        .contact-line {
+            margin-top: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff8df;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            box-shadow: 0 10px 22px rgba(6,61,47,0.18);
+        }
+
+        .islamic-divider {
+            max-width: 980px;
+            margin: 30px auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(214,168,79,0.85), transparent);
+            position: relative;
+        }
+
+        .islamic-divider::after {
+            content: "۞";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg);
+            color: var(--gold);
+            font-size: 28px;
+            padding: 0 18px;
+        }
+
+        .section-heading {
+            max-width: 1100px;
+            margin: 0 auto 18px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            color: var(--dark);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+        }
+
+        .section-heading p {
+            margin: 8px auto 0;
+            color: var(--muted);
+            max-width: 720px;
+            line-height: 1.7;
+        }
+
+        .contact-us {
+            max-width: 1050px;
+            margin: 22px auto 18px;
+            padding: 30px 26px;
+            border-radius: 26px;
+            background:
+                linear-gradient(135deg, rgba(6,61,47,0.98), rgba(15,107,79,0.95));
+            color: #fff8df;
+            box-shadow: 0 16px 38px rgba(6,61,47,0.18);
+            border: 1px solid rgba(214,168,79,0.48);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-us::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(246,231,189,0.18);
+            border-radius: 22px;
+            pointer-events: none;
+        }
+
+        .contact-us::after {
+            content: "☪";
+            position: absolute;
+            right: 22px;
+            top: -18px;
+            font-size: 120px;
+            color: rgba(246,231,189,0.08);
+        }
+
+        .contact-us h2 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            color: #fff0c7;
+        }
+
+        .contact-us p {
+            margin: 0 auto 22px;
+            max-width: 760px;
+            line-height: 1.7;
+            color: #fffaf0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card {
+            display: block;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(246,231,189,0.25);
+            color: #fff8df;
+            text-decoration: none;
+            transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.16);
+            border-color: rgba(214,168,79,0.75);
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 0.86rem;
+            color: #f6e7bd;
+            font-weight: 700;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        .contact-value {
+            display: block;
+            font-size: 1.08rem;
+            font-weight: 800;
+            word-break: break-word;
+        }
+
+        footer {
+            max-width: 1050px;
+            margin: 18px auto 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.92rem;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 650px) {
+            .page-wrap {
+                padding: 14px;
+            }
+
+            header {
+                padding: 34px 18px 28px;
+                border-radius: 22px;
+            }
+
+            .hero-writeup {
+                padding: 18px;
+            }
+
+            .tab-btn {
+                width: 100%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-us {
+                padding: 26px 18px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page-wrap">
+
+<section class="hero-section">
+    <h1>Wasila</h1>
+    <span class="product-note"></span>
+</section>
+
+<header>
+    <div class="hero-badge">Pan-India Tabarruk & Islamic Gathering Support</div>
+    <h1>Wasila</h1>
+</header>
+
+<div class="islamic-divider"></div>
+
+<div class="section-heading">
+    <h2>Explore Products</h2>
+</div>
+
+<div style="max-width: 900px; margin: 0 auto 28px;">
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+        <input
+            type="text"
+            id="productSearch"
+            placeholder="Search product name across all folders, example: alam, quran, tasbeeh..."
+            oninput="searchProducts()"
+            style="flex: 1; min-width: 260px; padding: 14px 18px; border-radius: 999px; border: 1px solid rgba(15,107,79,0.22); font-size: 1rem;"
+        >
+        <button
+            onclick="clearSearch()"
+            style="padding: 14px 22px; border-radius: 999px; border: none; cursor: pointer; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--dark)); color: #fff8df;"
+        >
+            Clear
+        </button>
+    </div>
+
+    <div style="margin-top: 10px; text-align: center; color: var(--muted); font-size: 0.92rem;">
+        Search checks product names in all folders and shows only matching items.
+    </div>
+</div>
+
+<div id="searchResultsInfo" style="max-width: 1100px; margin: 0 auto 16px; text-align: center; color: var(--dark); font-weight: 700;"></div>
+
+<div id="noResults" style="max-width: 760px; margin: 16px auto; padding: 22px; text-align: center; border-radius: 20px; background: #fffaf0; border: 1px solid rgba(214,168,79,0.35); color: var(--muted); display: none;">
+    No matching products found.
+</div>
+
+<div class="tabs">
+    <button class="tab-btn active" onclick="showCategory('imambargah', this)">Imambargah / Zari</button>
+    <button class="tab-btn" onclick="showCategory('majlis', this)">Majlis Tabarruk</button>
+    <button class="tab-btn" onclick="showCategory('zakereen', this)">Zakereen Hadiya</button>
+    <button class="tab-btn" onclick="showCategory('islamic', this)">Islamic Festivals & Wedding Gifts</button>
+</div>
+
+<div id="imambargah" class="gallery category-content active"></div>
+<div id="majlis" class="gallery category-content"></div>
+<div id="zakereen" class="gallery category-content"></div>
+<div id="islamic" class="gallery category-content"></div>
+
+<script>
+    const phoneNumber = "9650068218";
+
+    // CATEGORIES_START
+    const categories = {
+        "zakereen": {
+                "path": "assets/Zakereen Hadiya/",
+                "files": [
+                        "Caligraphic Envelope(1).jpeg",
+                        "Caligraphic Envelope(2).jpeg",
+                        "Caligraphic Envelope(3).jpeg",
+                        "Caligraphic Envelope(4).jpeg",
+                        "Caligraphic Envelope(5).jpeg",
+                        "Caligraphic Envelope(6).jpeg",
+                        "Caligraphic Envelope(7).jpeg",
+                        "Caligraphic Envelope(8).jpeg",
+                        "Caligraphic Envelope(9).jpeg",
+                        "Caligraphic Envelope(10).jpeg",
+                        "Caligraphic Envelope(11).jpeg",
+                        "Caligraphic Envelope(12).jpeg",
+                        "Caligraphic Envelope(13).jpeg",
+                        "Caligraphic Envelope(14).jpeg",
+                        "Gift Hamper(1).jpeg"
+                ]
+        },
+        "majlis": {
+                "path": "assets/Majlis Tarabbruk/",
+                "files": [
+                        "Batch Set(1).jpeg",
+                        "Batch Set(2).jpeg",
+                        "Handkerchief Set(1).jpeg",
+                        "Handkerchief Set(2).jpeg",
+                        "Handkerchief Set(3).jpeg",
+                        "Handkerchief Set(4).jpeg",
+                        "Milk Bottle(1).mp4",
+                        "Mini Janamaz Pouch Set(1).jpeg",
+                        "Mini Janamaz Pouch Set(2).jpeg",
+                        "Mini Janamaz Pouch Set(3).jpeg",
+                        "Mini Jar Candles(1).jpeg",
+                        "Sipper Set(1).jpeg",
+                        "Sipper Set(2).jpeg",
+                        "Tasbeeh Set(1).jpeg",
+                        "TShirt Set(1).jpeg",
+                        "Watch Set(1).jpeg",
+                        "Watch Set(2).jpeg",
+                        "Watch Set(3).jpeg",
+                        "WhatsApp Image 2026-05-10 at 14.21.57.jpeg"
+                ]
+        },
+        "islamic": {
+                "path": "assets/Islamic Festivals & Wedding Gifts/",
+                "files": [
+                        "Caligraphic Card(1).jpeg",
+                        "Caligraphic Card(2).jpeg",
+                        "Caligraphic Card(3).jpeg",
+                        "Caligraphic Card(4).jpeg",
+                        "Caligraphic Card(5).jpeg",
+                        "Caligraphic Card(6).jpeg",
+                        "Caligraphic Card(7).jpeg",
+                        "Caligraphic Card(8).jpeg",
+                        "Caligraphic Card(9).jpeg",
+                        "Caligraphic Card(10).jpeg",
+                        "Caligraphic Card(11).jpeg",
+                        "Caligraphic Card(12).jpeg",
+                        "Candle Set(1).jpeg",
+                        "Gifting Potli(1).jpeg",
+                        "Gifting Potli(2).jpeg",
+                        "Gifting Potli(3).jpeg",
+                        "Gifting Potli(4).jpeg",
+                        "ImamZameen Set(1).jpeg",
+                        "ImamZameen Set(2).jpeg",
+                        "ImamZameen Set(3).jpeg",
+                        "ImamZameen Set(4).jpeg",
+                        "ImamZameen Set(5).jpeg",
+                        "Quran Box Set(1).jpeg",
+                        "Quran Box Set(2).jpeg",
+                        "Quran Box Set(3).jpeg",
+                        "Quran Box Set(4).jpeg",
+                        "Tasbeeh Set(1).jpeg",
+                        "Tasbeeh Set(2).jpeg",
+                        "Tasbeeh Set(3).jpeg"
+                ]
+        }
+};
+    // CATEGORIES_END
+
+    function normalizeSearchText(text) {
+        return String(text || "")
+            .toLowerCase()
+            .replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "")
+            .replace(/[-_/().]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function getProductDisplayName(file) {
+        return String(file || "")
+            .replace(/_/g, " ")
+            .replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "");
+    }
+
+    function sendWhatsApp(productName) {
+        const message = encodeURIComponent(`Hi, I am interested in this product: ${productName}`);
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    }
+
+    function renderProducts() {
+        for (const [id, category] of Object.entries(categories)) {
+            const container = document.getElementById(id);
+
+            if (!container) {
+                console.warn(`Container not found for category: ${id}`);
+                continue;
+            }
+
+            container.innerHTML = "";
+
+            category.files.forEach(file => {
+                const isVideo = file.toLowerCase().endsWith(".mp4");
+                const displayName = getProductDisplayName(file);
+
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.setAttribute("data-search", normalizeSearchText(displayName));
+                card.onclick = () => sendWhatsApp(file);
+
+                const media = isVideo
+                    ? `<video src="${category.path}${file}" muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>`
+                    : `<img src="${category.path}${file}" alt="${file}" loading="lazy">`;
+
+                card.innerHTML = `
+                    ${media}
+                    <div class="product-info">
+                        <h3>${displayName}</h3>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+    }
+
+    function showCategory(id, buttonElement) {
+        const searchInput = document.getElementById("productSearch");
+        const resultInfo = document.getElementById("searchResultsInfo");
+        const noResults = document.getElementById("noResults");
+
+        if (searchInput) searchInput.value = "";
+        if (resultInfo) resultInfo.textContent = "";
+        if (noResults) noResults.style.display = "none";
+
+        document.querySelectorAll(".product-card").forEach(card => {
+            card.style.display = "";
+        });
+
+        document.querySelectorAll(".category-content").forEach(c => c.classList.remove("active"));
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
+        const selectedCategory = document.getElementById(id);
+
+        if (selectedCategory) {
+            selectedCategory.classList.add("active");
+        }
+
+        if (buttonElement) {
+            buttonElement.classList.add("active");
+        }
+    }
+
+    function searchProducts() {
+        const input = document.getElementById("productSearch");
+        const query = normalizeSearchText(input.value);
+
+        const resultInfo = document.getElementById("searchResultsInfo");
+        const noResults = document.getElementById("noResults");
+
+        if (!query) {
+            resultInfo.textContent = "";
+            noResults.style.display = "none";
+
+            document.querySelectorAll(".category-content").forEach(c => c.classList.remove("active"));
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
+            const defaultCategory = document.getElementById("imambargah");
+            const defaultButton = document.querySelector(".tab-btn");
+
+            if (defaultCategory) defaultCategory.classList.add("active");
+            if (defaultButton) defaultButton.classList.add("active");
+
+            document.querySelectorAll(".product-card").forEach(card => {
+                card.style.display = "";
+            });
+
+            return;
+        }
+
+        document.querySelectorAll(".category-content").forEach(c => c.classList.add("active"));
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
+        let totalMatches = 0;
+
+        document.querySelectorAll(".product-card").forEach(card => {
+            const productName = card.getAttribute("data-search") || "";
+
+            if (productName.includes(query)) {
+                card.style.display = "";
+                totalMatches++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        document.querySelectorAll(".category-content").forEach(container => {
+            const visibleCards = Array.from(container.querySelectorAll(".product-card"))
+                .filter(card => card.style.display !== "none");
+
+            if (visibleCards.length > 0) {
+                container.classList.add("active");
+            } else {
+                container.classList.remove("active");
+            }
+        });
+
+        if (totalMatches > 0) {
+            resultInfo.textContent = `${totalMatches} matching product(s) found for "${input.value}"`;
+            noResults.style.display = "none";
+        } else {
+            resultInfo.textContent = "";
+            noResults.style.display = "block";
+        }
+    }
+
+    function clearSearch() {
+        const input = document.getElementById("productSearch");
+        input.value = "";
+        searchProducts();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        renderProducts();
+    });
+</script>
+
+<section class="about-us">
+    <h2>About Us</h2>
+    <p>Through this effort, local vendors and families receive meaningful opportunities to serve and earn with dignity across India.</p>
+    <p>Orders should be placed well in advance to ensure timely preparation and delivery for your gatherings and events.</p>
+</section>
+
+<section class="contact-us">
+    <h2>Contact Us</h2>
+    <p>For product inquiry, pricing, delivery details, or vendor support, please contact Wasila through phone or email.</p>
+
+    <div class="contact-grid">
+        <a class="contact-card" href="tel:+919650068218">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91 9650068218</span>
+        </a>
+
+        <a class="contact-card" href="mailto:wasilatabarruk@gmail.com?subject=Wasila%20Tabarruk%20Inquiry">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">wasilatabarruk@gmail.com</span>
+        </a>
+    </div>
+</section>
+
+<footer>
+    Wasila — Supporting small vendors with devotion, dignity, and community care.
+</footer>
+
+</div>
+</body>
+</html>
