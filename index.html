@@ -539,9 +539,14 @@
 <div id="islamic" class="gallery category-content"></div>
 
 <script>
-    const phoneNumber = "9650068218";
+    // PHONE_CONFIG_START
+    // IMPORTANT:
+    // Do not put this block between CATEGORIES_START and CATEGORIES_END.
+    // sync.js is allowed to update only the categories block.
+    // WhatsApp wa.me format must be country code + number, without + and without 00.
+    const phoneNumber = "919650068218";
+    // PHONE_CONFIG_END
 
-<<<<<<< HEAD
     // CATEGORIES_START
     const categories = {
         "zakereen": {
@@ -689,126 +694,6 @@
                 ]
         }
 };
-=======
-    // CATEGORIES_START
-    const categories = {
-        "zakereen": {
-                "path": "assets/Zakereen Hadiya/",
-                "files": [
-                        "Caligraphic Envelope(1).jpeg",
-                        "Caligraphic Envelope(2).jpeg",
-                        "Caligraphic Envelope(3).jpeg",
-                        "Caligraphic Envelope(4).jpeg",
-                        "Caligraphic Envelope(5).jpeg",
-                        "Caligraphic Envelope(6).jpeg",
-                        "Caligraphic Envelope(7).jpeg",
-                        "Caligraphic Envelope(8).jpeg",
-                        "Caligraphic Envelope(9).jpeg",
-                        "Caligraphic Envelope(10).jpeg",
-                        "Caligraphic Envelope(11).jpeg",
-                        "Caligraphic Envelope(12).jpeg",
-                        "Caligraphic Envelope(13).jpeg",
-                        "Caligraphic Envelope(14).jpeg",
-                        "Gift Hamper(1).jpeg"
-                ]
-        },
-        "majlis": {
-                "path": "assets/Majlis Tarabbruk/",
-                "files": [
-                        "Batch Set(1).jpeg",
-                        "Batch Set(2).jpeg",
-                        "Handkerchief Set(1).jpeg",
-                        "Handkerchief Set(2).jpeg",
-                        "Handkerchief Set(3).jpeg",
-                        "Handkerchief Set(4).jpeg",
-                        "Juice Glass Set(1).jpeg",
-                        "Milk Bottle(1).mp4",
-                        "Mini Janamaz Pouch Set(1).jpeg",
-                        "Mini Janamaz Pouch Set(2).jpeg",
-                        "Mini Janamaz Pouch Set(3).jpeg",
-                        "Sipper Set(1).jpeg",
-                        "Sipper Set(2).jpeg",
-                        "Tasbeeh Set(1).jpeg",
-                        "TShirt Set(1).jpeg",
-                        "Watch Set(1).jpeg",
-                        "Watch Set(2).jpeg",
-                        "Watch Set(3).jpeg"
-                ]
-        },
-        "imambargah": {
-                "path": "assets/Imambargah - Zari Tabarruk/",
-                "files": [
-                        "Alam Panja(1).jpeg",
-                        "Alam Panja(4).jpeg",
-                        "Alam Panja(12).jpeg",
-                        "Alam Panja(13).jpeg",
-                        "Alam Panja(14).jpeg",
-                        "Alam Patka(1).jpeg",
-                        "Alam Patka(2).jpeg",
-                        "Alam Patka(3).jpeg",
-                        "Alam Patka(4).jpeg",
-                        "Alam Patka(5).jpeg",
-                        "Alam Patka(6).jpeg",
-                        "Alam Patka(7).jpeg",
-                        "Alam Patka(8).jpeg",
-                        "Alam Patka(9).jpeg",
-                        "Alam Patka(10).jpeg",
-                        "Alam Patka(11).jpeg",
-                        "Alam Patka(12).jpeg",
-                        "Alam Patka(13).jpeg",
-                        "Alam Patka(14).jpeg",
-                        "Alam Patka(15).jpeg",
-                        "Banner(1).jpeg",
-                        "Banner(2).jpeg",
-                        "Banner(3).jpeg",
-                        "Banner(4).jpeg",
-                        "Banner(5).jpeg",
-                        "Banner(6).jpeg",
-                        "i1.jpeg",
-                        "Pantajan Name Set(1).jpeg",
-                        "Pantajan Name Set(2).jpeg",
-                        "Pantajan Name Set(3).jpeg",
-                        "Pantajan Name Set(4).jpeg",
-                        "Pillow Cover(1).jpeg",
-                        "Pillow Cover(2).jpeg",
-                        "Pillow Cover(3).jpeg",
-                        "Pillow Cover(4).jpeg",
-                        "Pillow Cover(5).jpeg",
-                        "Zulfiqar(1).mp4"
-                ]
-        },
-        "islamic": {
-                "path": "assets/Islamic Festivals & Wedding Gifts/",
-                "files": [
-                        "Caligraphic Card(1).jpeg",
-                        "Caligraphic Card(2).jpeg",
-                        "Caligraphic Card(3).jpeg",
-                        "Caligraphic Card(4).jpeg",
-                        "Caligraphic Card(5).jpeg",
-                        "Caligraphic Card(6).jpeg",
-                        "Caligraphic Card(7).jpeg",
-                        "Caligraphic Card(8).jpeg",
-                        "Caligraphic Card(9).jpeg",
-                        "Caligraphic Card(10).jpeg",
-                        "Caligraphic Card(11).jpeg",
-                        "Caligraphic Card(12).jpeg",
-                        "Candle Set(1).jpeg",
-                        "ImamZameen Set(1).jpeg",
-                        "ImamZameen Set(2).jpeg",
-                        "ImamZameen Set(3).jpeg",
-                        "ImamZameen Set(4).jpeg",
-                        "ImamZameen Set(5).jpeg",
-                        "Quran Box Set(1).jpeg",
-                        "Quran Box Set(2).jpeg",
-                        "Quran Box Set(3).jpeg",
-                        "Quran Box Set(4).jpeg",
-                        "Tasbeeh Set(1).jpeg",
-                        "Tasbeeh Set(2).jpeg",
-                        "Tasbeeh Set(3).jpeg"
-                ]
-        }
-};
->>>>>>> 19051e58118e48747e0da0a34247bc0e8cd94de2
     // CATEGORIES_END
 
     function normalizeSearchText(text) {
@@ -826,12 +711,10 @@
             .replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "");
     }
 
-const phoneNumber = "919650068218";
-
-function sendWhatsApp(productName) {
-    const message = encodeURIComponent(`Hi, I am interested in this product: ${productName}`);
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-}
+    function sendWhatsApp(productName) {
+        const message = encodeURIComponent(`Hi, I am interested in this product: ${productName}`);
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    }
 
     function renderProducts() {
         for (const [id, category] of Object.entries(categories)) {
@@ -983,7 +866,7 @@ function sendWhatsApp(productName) {
     <div class="contact-grid">
         <a class="contact-card" href="tel:+919650068218">
             <span class="contact-label">Phone</span>
-            <span class="contact-value">+919650068218</span>
+            <span class="contact-value">+91 9650068218</span>
         </a>
 
         <a class="contact-card" href="mailto:wasilatabarruk@gmail.com?subject=Wasila%20Tabarruk%20Inquiry">
