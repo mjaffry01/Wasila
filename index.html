@@ -527,16 +527,16 @@
 </div>
 
 <div class="tabs">
-    <button class="tab-btn active" onclick="showCategory('imambargah', this)">Imambargah / Zari</button>
-    <button class="tab-btn" onclick="showCategory('majlis', this)">Majlis Tabarruk</button>
+    <button class="tab-btn active" onclick="showCategory('islamic', this)">Islamic Festivals & Wedding Gifts</button>
+    <button class="tab-btn" onclick="showCategory('majlis', this)">Majlis Tarabbruk</button>
+    <button class="tab-btn" onclick="showCategory('imambargah', this)">Imambargah - Zari Tabarruk</button>
     <button class="tab-btn" onclick="showCategory('zakereen', this)">Zakereen Hadiya</button>
-    <button class="tab-btn" onclick="showCategory('islamic', this)">Islamic Festivals & Wedding Gifts</button>
 </div>
 
-<div id="imambargah" class="gallery category-content active"></div>
+<div id="islamic" class="gallery category-content active"></div>
 <div id="majlis" class="gallery category-content"></div>
+<div id="imambargah" class="gallery category-content"></div>
 <div id="zakereen" class="gallery category-content"></div>
-<div id="islamic" class="gallery category-content"></div>
 
 <script>
     // PHONE_CONFIG_START
@@ -750,6 +750,7 @@
             category.files.forEach(file => {
                 const isVideo = file.toLowerCase().endsWith(".mp4");
                 const displayName = getProductDisplayName(file);
+                const fileUrl = encodeURI(category.path + file);
 
                 const card = document.createElement("div");
                 card.className = "product-card";
@@ -757,8 +758,8 @@
                 card.onclick = () => sendWhatsApp(file);
 
                 const media = isVideo
-                    ? `<video src="${category.path}${file}" muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>`
-                    : `<img src="${category.path}${file}" alt="${file}" loading="lazy">`;
+                    ? `<video src="${fileUrl}" muted loop playsinline controls></video>`
+                    : `<img src="${fileUrl}" alt="${file}" loading="lazy">`;
 
                 card.innerHTML = `
                     ${media}
@@ -813,7 +814,7 @@
             document.querySelectorAll(".category-content").forEach(c => c.classList.remove("active"));
             document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
 
-            const defaultCategory = document.getElementById("imambargah");
+            const defaultCategory = document.getElementById("islamic");
             const defaultButton = document.querySelector(".tab-btn");
 
             if (defaultCategory) defaultCategory.classList.add("active");
