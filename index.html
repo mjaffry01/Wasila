@@ -1514,7 +1514,7 @@
     }
 
    function sendWhatsApp(productName, fileUrl) {
-    const fullImageUrl = window.location.origin + "/" + encodeURI(fileUrl);   
+    const fullImageUrl = new URL(fileUrl, window.location.href).href;   
     const message = encodeURIComponent(
                 `Hi, I am interested in this product:
 ${productName}
