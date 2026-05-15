@@ -270,6 +270,17 @@
             color: #159447;
         }
 
+        .product-info::after {
+            content: "Click for inquiry";
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--dark);
+            background: var(--gold-soft);
+        }
 
         .category-content {
             display: none;
@@ -467,263 +478,6 @@
             padding-bottom: 10px;
         }
 
-
-
-        .product-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-
-        .product-btn {
-            border: none;
-            border-radius: 999px;
-            padding: 8px 13px;
-            cursor: pointer;
-            font-weight: 800;
-            font-size: 0.78rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-
-        .product-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(6,61,47,0.14);
-        }
-
-        .zoom-btn {
-            background: #eef8f3;
-            color: var(--dark);
-            border: 1px solid rgba(15,107,79,0.16);
-        }
-
-        .cart-btn {
-            background: var(--gold-soft);
-            color: var(--dark);
-            border: 1px solid rgba(214,168,79,0.42);
-        }
-
-        .product-card.in-cart {
-            outline: 3px solid rgba(21,148,71,0.28);
-        }
-
-        .product-card.in-cart::after {
-            content: "Added";
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #159447;
-            color: #ffffff;
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 0.72rem;
-            font-weight: 900;
-            box-shadow: 0 6px 16px rgba(21,148,71,0.25);
-        }
-
-        .floating-cart {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            border: none;
-            border-radius: 999px;
-            padding: 14px 20px;
-            cursor: pointer;
-            font-weight: 900;
-            color: #fff8df;
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            box-shadow: 0 14px 30px rgba(6,61,47,0.28);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cart-count {
-            min-width: 24px;
-            height: 24px;
-            padding: 0 7px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gold);
-            color: var(--dark);
-            font-size: 0.82rem;
-        }
-
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            background: rgba(0,0,0,0.72);
-            z-index: 2000;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-box {
-            width: min(980px, 96vw);
-            max-height: 92vh;
-            overflow: auto;
-            background: #fffaf0;
-            border-radius: 24px;
-            border: 1px solid rgba(214,168,79,0.55);
-            box-shadow: 0 24px 60px rgba(0,0,0,0.28);
-            position: relative;
-        }
-
-        .modal-header {
-            position: sticky;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 16px 18px;
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: #fff8df;
-            z-index: 1;
-        }
-
-        .modal-header h3 {
-            margin: 0;
-            font-size: 1.05rem;
-        }
-
-        .modal-close {
-            border: none;
-            cursor: pointer;
-            border-radius: 999px;
-            width: 36px;
-            height: 36px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            background: rgba(255,255,255,0.14);
-            color: #fff8df;
-        }
-
-        .zoom-body {
-            padding: 18px;
-            text-align: center;
-        }
-
-        .zoom-body img,
-        .zoom-body video {
-            width: 100%;
-            max-height: 72vh;
-            object-fit: contain;
-            border-radius: 18px;
-            background: #f1ead8;
-        }
-
-        .zoom-product-name {
-            margin: 12px 0 0;
-            font-weight: 900;
-            color: var(--dark);
-        }
-
-        .cart-body {
-            padding: 18px;
-        }
-
-        .cart-empty {
-            text-align: center;
-            color: var(--muted);
-            padding: 22px;
-        }
-
-        .cart-item {
-            display: grid;
-            grid-template-columns: 70px 1fr auto;
-            gap: 12px;
-            align-items: center;
-            padding: 12px;
-            border-radius: 16px;
-            background: #ffffff;
-            border: 1px solid rgba(214,168,79,0.28);
-            margin-bottom: 10px;
-        }
-
-        .cart-item img,
-        .cart-item video {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 12px;
-            background: #eee;
-        }
-
-        .cart-item-title {
-            font-weight: 900;
-            color: var(--dark);
-            line-height: 1.35;
-        }
-
-        .remove-cart-btn {
-            border: none;
-            border-radius: 999px;
-            cursor: pointer;
-            padding: 8px 12px;
-            font-weight: 900;
-            color: #8a1f1f;
-            background: #ffe8e8;
-        }
-
-        .cart-footer-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            padding-top: 14px;
-        }
-
-        .primary-action,
-        .secondary-action {
-            border: none;
-            border-radius: 999px;
-            cursor: pointer;
-            padding: 12px 18px;
-            font-weight: 900;
-        }
-
-        .primary-action {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: #fff8df;
-        }
-
-        .secondary-action {
-            background: #eee4cb;
-            color: var(--dark);
-        }
-
-        .toast-message {
-            position: fixed;
-            left: 50%;
-            bottom: 86px;
-            transform: translateX(-50%);
-            padding: 12px 18px;
-            border-radius: 999px;
-            background: rgba(6,61,47,0.95);
-            color: #fff8df;
-            font-weight: 800;
-            z-index: 3000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-        }
-
-        .toast-message.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-6px);
-        }
-
         @media (max-width: 650px) {
             .page-wrap {
                 padding: 14px;
@@ -752,20 +506,6 @@
 
             .contact-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .floating-cart {
-                right: 14px;
-                left: 14px;
-                justify-content: center;
-            }
-
-            .cart-item {
-                grid-template-columns: 58px 1fr;
-            }
-
-            .cart-item .remove-cart-btn {
-                grid-column: 1 / -1;
             }
         }
     </style>
@@ -829,32 +569,6 @@
 <div id="majlis" class="gallery category-content"></div>
 <div id="imambargah" class="gallery category-content"></div>
 <div id="zakereen" class="gallery category-content"></div>
-
-<button class="floating-cart" onclick="openCart()" aria-label="Open inquiry cart">
-    Inquiry Cart <span id="cartCount" class="cart-count">0</span>
-</button>
-
-<div id="zoomModal" class="modal-overlay" onclick="closeZoomFromOverlay(event)">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="zoomTitle">
-        <div class="modal-header">
-            <h3 id="zoomTitle">Product Preview</h3>
-            <button class="modal-close" onclick="closeZoom()" aria-label="Close preview">×</button>
-        </div>
-        <div id="zoomBody" class="zoom-body"></div>
-    </div>
-</div>
-
-<div id="cartModal" class="modal-overlay" onclick="closeCartFromOverlay(event)">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-        <div class="modal-header">
-            <h3 id="cartTitle">Inquiry Cart</h3>
-            <button class="modal-close" onclick="closeCart()" aria-label="Close cart">×</button>
-        </div>
-        <div id="cartBody" class="cart-body"></div>
-    </div>
-</div>
-
-<div id="toastMessage" class="toast-message"></div>
 
 <script>
     // PHONE_CONFIG_START
@@ -981,7 +695,7 @@
                                 "name": "White Jute Window Bag(1).jpeg",
                                 "createdAt": "2026-05-13 08:05:47",
                                 "modifiedAt": "2026-05-11 13:17:02",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Aqeeq Glass Tasbeeh(2).jpeg",
@@ -1426,112 +1140,76 @@
                 "path": "assets/Islamic Festivals & Wedding Gifts/",
                 "files": [
                         {
-                                "name": "Crotia Potli(8).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(4).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(5).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(2).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(7).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(6).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:29",
-                                "isNewToday": false
-                        },
-                        {
                                 "name": "Utility Pouch(1).jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(2).jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(3).jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(4).jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(5).jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(6).jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(7.jpeg",
                                 "createdAt": "2026-05-13 08:28:34",
                                 "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(9).jpeg",
                                 "createdAt": "2026-05-13 08:28:33",
                                 "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(8).jpeg",
                                 "createdAt": "2026-05-13 08:28:33",
                                 "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(10).jpeg",
                                 "createdAt": "2026-05-13 08:28:33",
                                 "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(11).jpeg",
                                 "createdAt": "2026-05-13 08:28:33",
                                 "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Utility Pouch(12).jpeg",
                                 "createdAt": "2026-05-13 08:28:33",
                                 "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
+                                "isNewToday": true
                         },
                         {
                                 "name": "Crotia Vase(1).jpeg",
@@ -1714,13 +1392,7 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "ImamZameen Set(1)-DESKTOP-5HBJNR6.jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(2)-DESKTOP-5HBJNR6.jpeg",
+                                "name": "ImamZameen Set(1).jpeg",
                                 "createdAt": "2026-05-08 17:44:08",
                                 "modifiedAt": "2026-05-08 17:44:08",
                                 "isNewToday": false
@@ -1733,12 +1405,6 @@
                         },
                         {
                                 "name": "ImamZameen Set(3).jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(1).jpeg",
                                 "createdAt": "2026-05-08 17:44:08",
                                 "modifiedAt": "2026-05-08 17:44:08",
                                 "isNewToday": false
@@ -1847,193 +1513,17 @@
             .replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "");
     }
 
-    let inquiryCart = [];
+   function sendWhatsApp(productName, fileUrl) {
+    const fullImageUrl = new URL(fileUrl, window.location.href).href;   
+    const message = encodeURIComponent(
+                `Hi, I am interested in this product:
+${productName}
+Product Image:
+${fullImageUrl}`
+    );
 
-    function showToast(message) {
-        const toast = document.getElementById("toastMessage");
-        if (!toast) return;
-        toast.textContent = message;
-        toast.classList.add("show");
-        window.clearTimeout(showToast.timeoutId);
-        showToast.timeoutId = window.setTimeout(() => {
-            toast.classList.remove("show");
-        }, 1800);
-    }
-
-    function getProductKey(fileUrl) {
-        return String(fileUrl || "").toLowerCase();
-    }
-
-    function updateCartCount() {
-        const count = document.getElementById("cartCount");
-        if (count) count.textContent = inquiryCart.length;
-
-        document.querySelectorAll(".product-card").forEach(card => {
-            const key = card.getAttribute("data-product-key");
-            const exists = inquiryCart.some(item => item.key === key);
-            card.classList.toggle("in-cart", exists);
-        });
-    }
-
-    function addToCart(productName, fileUrl, isVideo) {
-        const key = getProductKey(fileUrl);
-        const alreadyAdded = inquiryCart.some(item => item.key === key);
-
-        if (alreadyAdded) {
-            showToast("This product is already in your cart.");
-            return;
-        }
-
-        inquiryCart.push({
-            key,
-            productName,
-            fileUrl,
-            isVideo: Boolean(isVideo)
-        });
-
-        updateCartCount();
-        showToast("Added to inquiry cart.");
-    }
-
-    function removeFromCart(key) {
-        inquiryCart = inquiryCart.filter(item => item.key !== key);
-        updateCartCount();
-        renderCart();
-    }
-
-    function clearCartItems() {
-        inquiryCart = [];
-        updateCartCount();
-        renderCart();
-    }
-
-    function openZoom(productName, fileUrl, isVideo) {
-        const zoomModal = document.getElementById("zoomModal");
-        const zoomBody = document.getElementById("zoomBody");
-        const zoomTitle = document.getElementById("zoomTitle");
-        const safeName = getProductDisplayName(productName);
-
-        if (!zoomModal || !zoomBody) return;
-
-        if (zoomTitle) zoomTitle.textContent = safeName;
-
-        const media = isVideo
-            ? `<video src="${fileUrl}" controls autoplay playsinline></video>`
-            : `<img src="${fileUrl}" alt="${safeName}">`;
-
-        zoomBody.innerHTML = `
-            ${media}
-            <div class="zoom-product-name">${safeName}</div>
-            <div class="product-actions">
-                <button class="product-btn cart-btn" onclick="addToCart('${escapeJs(productName)}', '${escapeJs(fileUrl)}', ${Boolean(isVideo)})">Add to Inquiry Cart</button>
-            </div>
-        `;
-
-        zoomModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeZoom() {
-        const zoomModal = document.getElementById("zoomModal");
-        const zoomBody = document.getElementById("zoomBody");
-        if (zoomModal) zoomModal.classList.remove("active");
-        if (zoomBody) zoomBody.innerHTML = "";
-        document.body.style.overflow = "";
-    }
-
-    function closeZoomFromOverlay(event) {
-        if (event.target && event.target.id === "zoomModal") {
-            closeZoom();
-        }
-    }
-
-    function openCart() {
-        renderCart();
-        const cartModal = document.getElementById("cartModal");
-        if (cartModal) {
-            cartModal.classList.add("active");
-            document.body.style.overflow = "hidden";
-        }
-    }
-
-    function closeCart() {
-        const cartModal = document.getElementById("cartModal");
-        if (cartModal) cartModal.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-    function closeCartFromOverlay(event) {
-        if (event.target && event.target.id === "cartModal") {
-            closeCart();
-        }
-    }
-
-    function renderCart() {
-        const cartBody = document.getElementById("cartBody");
-        if (!cartBody) return;
-
-        if (inquiryCart.length === 0) {
-            cartBody.innerHTML = `<div class="cart-empty">Your inquiry cart is empty. Add products first, then send one WhatsApp inquiry.</div>`;
-            return;
-        }
-
-        const itemsHtml = inquiryCart.map(item => {
-            const safeName = getProductDisplayName(item.productName);
-            const media = item.isVideo
-                ? `<video src="${item.fileUrl}" muted playsinline></video>`
-                : `<img src="${item.fileUrl}" alt="${safeName}">`;
-
-            return `
-                <div class="cart-item">
-                    ${media}
-                    <div>
-                        <div class="cart-item-title">${safeName}</div>
-                    </div>
-                    <button class="remove-cart-btn" onclick="removeFromCart('${escapeJs(item.key)}')">Remove</button>
-                </div>
-            `;
-        }).join("");
-
-        cartBody.innerHTML = `
-            ${itemsHtml}
-            <div class="cart-footer-actions">
-                <button class="secondary-action" onclick="clearCartItems()">Clear Cart</button>
-                <button class="primary-action" onclick="sendCartInquiry()">Send Inquiry on WhatsApp</button>
-            </div>
-        `;
-    }
-
-    function sendCartInquiry() {
-        if (inquiryCart.length === 0) {
-            showToast("Please add at least one product.");
-            return;
-        }
-
-        const lines = [
-            "Hi, I am interested in these products:",
-            ""
-        ];
-
-        inquiryCart.forEach((item, index) => {
-            const fullImageUrl = new URL(item.fileUrl, window.location.href).href;
-            lines.push(`${index + 1}. ${getProductDisplayName(item.productName)}`);
-            lines.push(`Product Image: ${fullImageUrl}`);
-            lines.push("");
-        });
-
-        lines.push("Please share price and delivery details.");
-
-        const message = encodeURIComponent(lines.join("\n"));
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-    }
-
-    function escapeJs(value) {
-        return String(value || "")
-            .replace(/\\/g, "\\\\")
-            .replace(/'/g, "\\'")
-            .replace(/\n/g, "\\n")
-            .replace(/\r/g, "");
-    }
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+}
 
     function getFileName(fileItem) {
         return typeof fileItem === "string" ? fileItem : fileItem.name;
@@ -2074,7 +1564,7 @@
                 const card = document.createElement("div");
                 card.className = "product-card";
                 card.setAttribute("data-search", normalizeSearchText(displayName));
-                card.setAttribute("data-product-key", getProductKey(fileUrl));
+                card.onclick = () => sendWhatsApp(fileName, fileUrl);
 
                 if (tooltip) {
                     card.setAttribute("title", tooltip);
@@ -2095,10 +1585,6 @@
                             <span>${displayName}</span>
                             ${newTodayBadge}
                         </h3>
-                        <div class="product-actions">
-                            <button class="product-btn zoom-btn" onclick="openZoom('${escapeJs(fileName)}', '${escapeJs(fileUrl)}', ${isVideo})">View Full Image</button>
-                            <button class="product-btn cart-btn" onclick="addToCart('${escapeJs(fileName)}', '${escapeJs(fileUrl)}', ${isVideo})">Add to Cart</button>
-                        </div>
                     </div>
                 `;
 
@@ -2205,14 +1691,6 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         renderProducts();
-        updateCartCount();
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeZoom();
-            closeCart();
-        }
     });
 </script>
 

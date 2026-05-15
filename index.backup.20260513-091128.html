@@ -270,6 +270,17 @@
             color: #159447;
         }
 
+        .product-info::after {
+            content: "Click for inquiry";
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--dark);
+            background: var(--gold-soft);
+        }
 
         .category-content {
             display: none;
@@ -467,263 +478,6 @@
             padding-bottom: 10px;
         }
 
-
-
-        .product-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-
-        .product-btn {
-            border: none;
-            border-radius: 999px;
-            padding: 8px 13px;
-            cursor: pointer;
-            font-weight: 800;
-            font-size: 0.78rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-
-        .product-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(6,61,47,0.14);
-        }
-
-        .zoom-btn {
-            background: #eef8f3;
-            color: var(--dark);
-            border: 1px solid rgba(15,107,79,0.16);
-        }
-
-        .cart-btn {
-            background: var(--gold-soft);
-            color: var(--dark);
-            border: 1px solid rgba(214,168,79,0.42);
-        }
-
-        .product-card.in-cart {
-            outline: 3px solid rgba(21,148,71,0.28);
-        }
-
-        .product-card.in-cart::after {
-            content: "Added";
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #159447;
-            color: #ffffff;
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 0.72rem;
-            font-weight: 900;
-            box-shadow: 0 6px 16px rgba(21,148,71,0.25);
-        }
-
-        .floating-cart {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            border: none;
-            border-radius: 999px;
-            padding: 14px 20px;
-            cursor: pointer;
-            font-weight: 900;
-            color: #fff8df;
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            box-shadow: 0 14px 30px rgba(6,61,47,0.28);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cart-count {
-            min-width: 24px;
-            height: 24px;
-            padding: 0 7px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gold);
-            color: var(--dark);
-            font-size: 0.82rem;
-        }
-
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            background: rgba(0,0,0,0.72);
-            z-index: 2000;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-box {
-            width: min(980px, 96vw);
-            max-height: 92vh;
-            overflow: auto;
-            background: #fffaf0;
-            border-radius: 24px;
-            border: 1px solid rgba(214,168,79,0.55);
-            box-shadow: 0 24px 60px rgba(0,0,0,0.28);
-            position: relative;
-        }
-
-        .modal-header {
-            position: sticky;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 16px 18px;
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: #fff8df;
-            z-index: 1;
-        }
-
-        .modal-header h3 {
-            margin: 0;
-            font-size: 1.05rem;
-        }
-
-        .modal-close {
-            border: none;
-            cursor: pointer;
-            border-radius: 999px;
-            width: 36px;
-            height: 36px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            background: rgba(255,255,255,0.14);
-            color: #fff8df;
-        }
-
-        .zoom-body {
-            padding: 18px;
-            text-align: center;
-        }
-
-        .zoom-body img,
-        .zoom-body video {
-            width: 100%;
-            max-height: 72vh;
-            object-fit: contain;
-            border-radius: 18px;
-            background: #f1ead8;
-        }
-
-        .zoom-product-name {
-            margin: 12px 0 0;
-            font-weight: 900;
-            color: var(--dark);
-        }
-
-        .cart-body {
-            padding: 18px;
-        }
-
-        .cart-empty {
-            text-align: center;
-            color: var(--muted);
-            padding: 22px;
-        }
-
-        .cart-item {
-            display: grid;
-            grid-template-columns: 70px 1fr auto;
-            gap: 12px;
-            align-items: center;
-            padding: 12px;
-            border-radius: 16px;
-            background: #ffffff;
-            border: 1px solid rgba(214,168,79,0.28);
-            margin-bottom: 10px;
-        }
-
-        .cart-item img,
-        .cart-item video {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 12px;
-            background: #eee;
-        }
-
-        .cart-item-title {
-            font-weight: 900;
-            color: var(--dark);
-            line-height: 1.35;
-        }
-
-        .remove-cart-btn {
-            border: none;
-            border-radius: 999px;
-            cursor: pointer;
-            padding: 8px 12px;
-            font-weight: 900;
-            color: #8a1f1f;
-            background: #ffe8e8;
-        }
-
-        .cart-footer-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            padding-top: 14px;
-        }
-
-        .primary-action,
-        .secondary-action {
-            border: none;
-            border-radius: 999px;
-            cursor: pointer;
-            padding: 12px 18px;
-            font-weight: 900;
-        }
-
-        .primary-action {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: #fff8df;
-        }
-
-        .secondary-action {
-            background: #eee4cb;
-            color: var(--dark);
-        }
-
-        .toast-message {
-            position: fixed;
-            left: 50%;
-            bottom: 86px;
-            transform: translateX(-50%);
-            padding: 12px 18px;
-            border-radius: 999px;
-            background: rgba(6,61,47,0.95);
-            color: #fff8df;
-            font-weight: 800;
-            z-index: 3000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-        }
-
-        .toast-message.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-6px);
-        }
-
         @media (max-width: 650px) {
             .page-wrap {
                 padding: 14px;
@@ -753,20 +507,6 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-
-            .floating-cart {
-                right: 14px;
-                left: 14px;
-                justify-content: center;
-            }
-
-            .cart-item {
-                grid-template-columns: 58px 1fr;
-            }
-
-            .cart-item .remove-cart-btn {
-                grid-column: 1 / -1;
-            }
         }
     </style>
 </head>
@@ -775,7 +515,7 @@
 <div class="page-wrap">
 
 <section class="hero-section">
-    
+    <h1>Wasila</h1>
     <span class="product-note"></span>
 </section>
 
@@ -830,32 +570,6 @@
 <div id="imambargah" class="gallery category-content"></div>
 <div id="zakereen" class="gallery category-content"></div>
 
-<button class="floating-cart" onclick="openCart()" aria-label="Open inquiry cart">
-    Inquiry Cart <span id="cartCount" class="cart-count">0</span>
-</button>
-
-<div id="zoomModal" class="modal-overlay" onclick="closeZoomFromOverlay(event)">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="zoomTitle">
-        <div class="modal-header">
-            <h3 id="zoomTitle">Product Preview</h3>
-            <button class="modal-close" onclick="closeZoom()" aria-label="Close preview">×</button>
-        </div>
-        <div id="zoomBody" class="zoom-body"></div>
-    </div>
-</div>
-
-<div id="cartModal" class="modal-overlay" onclick="closeCartFromOverlay(event)">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-        <div class="modal-header">
-            <h3 id="cartTitle">Inquiry Cart</h3>
-            <button class="modal-close" onclick="closeCart()" aria-label="Close cart">×</button>
-        </div>
-        <div id="cartBody" class="cart-body"></div>
-    </div>
-</div>
-
-<div id="toastMessage" class="toast-message"></div>
-
 <script>
     // PHONE_CONFIG_START
     // IMPORTANT:
@@ -870,90 +584,6 @@
         "zakereen": {
                 "path": "assets/Zakereen Hadiya/",
                 "files": [
-                        {
-                                "name": "White Jute Window Bag(1).jpeg",
-                                "createdAt": "2026-05-11 13:17:01",
-                                "modifiedAt": "2026-05-11 13:17:02",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Gift Set(1).jpeg",
-                                "createdAt": "2026-05-11 13:00:24",
-                                "modifiedAt": "2026-05-11 13:00:24",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Gift Hamper(1).jpeg",
-                                "createdAt": "2026-05-08 22:18:09",
-                                "modifiedAt": "2026-05-08 22:18:09",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(12).jpeg",
-                                "createdAt": "2026-05-07 13:04:01",
-                                "modifiedAt": "2026-05-07 13:04:03",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(6).jpeg",
-                                "createdAt": "2026-05-07 13:03:53",
-                                "modifiedAt": "2026-05-07 13:03:54",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(5).jpeg",
-                                "createdAt": "2026-05-07 13:00:46",
-                                "modifiedAt": "2026-05-07 13:00:47",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(10).jpeg",
-                                "createdAt": "2026-05-07 13:00:27",
-                                "modifiedAt": "2026-05-07 13:00:28",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(8).jpeg",
-                                "createdAt": "2026-05-07 13:00:05",
-                                "modifiedAt": "2026-05-07 13:00:06",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(4).jpeg",
-                                "createdAt": "2026-05-07 12:59:27",
-                                "modifiedAt": "2026-05-07 12:59:28",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(9).jpeg",
-                                "createdAt": "2026-05-07 12:58:57",
-                                "modifiedAt": "2026-05-07 12:58:58",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(13).jpeg",
-                                "createdAt": "2026-05-07 12:58:33",
-                                "modifiedAt": "2026-05-07 12:58:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(7).jpeg",
-                                "createdAt": "2026-05-07 12:58:19",
-                                "modifiedAt": "2026-05-07 12:58:20",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(11).jpeg",
-                                "createdAt": "2026-05-07 12:57:58",
-                                "modifiedAt": "2026-05-07 12:57:59",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Caligraphic Envelope(14).jpeg",
-                                "createdAt": "2026-05-07 12:57:42",
-                                "modifiedAt": "2026-05-07 12:57:43",
-                                "isNewToday": false
-                        },
                         {
                                 "name": "Caligraphic Envelope(1).jpeg",
                                 "createdAt": "2026-05-05 12:51:27",
@@ -971,18 +601,96 @@
                                 "createdAt": "2026-05-05 12:50:39",
                                 "modifiedAt": "2026-05-05 12:50:40",
                                 "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(4).jpeg",
+                                "createdAt": "2026-05-07 12:59:27",
+                                "modifiedAt": "2026-05-07 12:59:28",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(5).jpeg",
+                                "createdAt": "2026-05-07 13:00:46",
+                                "modifiedAt": "2026-05-07 13:00:47",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(6).jpeg",
+                                "createdAt": "2026-05-07 13:03:53",
+                                "modifiedAt": "2026-05-07 13:03:54",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(7).jpeg",
+                                "createdAt": "2026-05-07 12:58:19",
+                                "modifiedAt": "2026-05-07 12:58:20",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(8).jpeg",
+                                "createdAt": "2026-05-07 13:00:05",
+                                "modifiedAt": "2026-05-07 13:00:06",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(9).jpeg",
+                                "createdAt": "2026-05-07 12:58:57",
+                                "modifiedAt": "2026-05-07 12:58:58",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(10).jpeg",
+                                "createdAt": "2026-05-07 13:00:27",
+                                "modifiedAt": "2026-05-07 13:00:28",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(11).jpeg",
+                                "createdAt": "2026-05-07 12:57:58",
+                                "modifiedAt": "2026-05-07 12:57:59",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(12).jpeg",
+                                "createdAt": "2026-05-07 13:04:01",
+                                "modifiedAt": "2026-05-07 13:04:03",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(13).jpeg",
+                                "createdAt": "2026-05-07 12:58:33",
+                                "modifiedAt": "2026-05-07 12:58:34",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Caligraphic Envelope(14).jpeg",
+                                "createdAt": "2026-05-07 12:57:42",
+                                "modifiedAt": "2026-05-07 12:57:43",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Gift Hamper(1).jpeg",
+                                "createdAt": "2026-05-08 22:18:09",
+                                "modifiedAt": "2026-05-08 22:18:09",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Gift Set(1).jpeg",
+                                "createdAt": "2026-05-11 13:00:24",
+                                "modifiedAt": "2026-05-11 13:00:24",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "White Jute Window Bag(1).jpeg",
+                                "createdAt": "2026-05-11 13:17:01",
+                                "modifiedAt": "2026-05-11 13:17:02",
+                                "isNewToday": false
                         }
                 ]
         },
         "majlis": {
                 "path": "assets/Majlis Tarabbruk/",
                 "files": [
-                        {
-                                "name": "White Jute Window Bag(1).jpeg",
-                                "createdAt": "2026-05-13 08:05:47",
-                                "modifiedAt": "2026-05-11 13:17:02",
-                                "isNewToday": false
-                        },
                         {
                                 "name": "Aqeeq Glass Tasbeeh(2).jpeg",
                                 "createdAt": "2026-05-12 15:10:17",
@@ -996,57 +704,15 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Glass Tasbeeh(1).jpeg",
-                                "createdAt": "2026-05-12 15:10:17",
-                                "modifiedAt": "2026-05-12 15:10:17",
+                                "name": "Batch Set(1).jpeg",
+                                "createdAt": "2026-05-05 12:47:56",
+                                "modifiedAt": "2026-05-05 12:57:12",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Masoomeen Names -Wall Roll(5).jpeg",
-                                "createdAt": "2026-05-11 17:11:53",
-                                "modifiedAt": "2026-05-11 17:13:24",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Masoomeen Names -Wall Roll(4).jpeg",
-                                "createdAt": "2026-05-11 17:11:53",
-                                "modifiedAt": "2026-05-11 17:13:16",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Masoomeen Names -Wall Roll(3).jpeg",
-                                "createdAt": "2026-05-11 17:11:53",
-                                "modifiedAt": "2026-05-11 17:13:05",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Masoomeen Names -Wall Roll(2).jpeg",
-                                "createdAt": "2026-05-11 17:11:53",
-                                "modifiedAt": "2026-05-11 17:12:54",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Masoomeen Names -Wall Roll(1).jpeg",
-                                "createdAt": "2026-05-11 17:11:53",
-                                "modifiedAt": "2026-05-11 17:12:27",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Majlis Head Bands(1).jpeg",
-                                "createdAt": "2026-05-11 17:10:14",
-                                "modifiedAt": "2026-05-11 17:10:15",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Head band for kids(1).jpeg",
-                                "createdAt": "2026-05-11 13:24:14",
-                                "modifiedAt": "2026-05-11 13:24:14",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Tasbih -Sajdegah Box(1).jpeg",
-                                "createdAt": "2026-05-11 13:00:24",
-                                "modifiedAt": "2026-05-11 13:00:24",
+                                "name": "Batch Set(2).jpeg",
+                                "createdAt": "2026-05-05 12:43:01",
+                                "modifiedAt": "2026-05-05 12:42:09",
                                 "isNewToday": false
                         },
                         {
@@ -1056,57 +722,15 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Mini Jar Candles(4).jpeg",
-                                "createdAt": "2026-05-11 12:21:02",
-                                "modifiedAt": "2026-05-11 12:21:02",
+                                "name": "Glass Tasbeeh(1).jpeg",
+                                "createdAt": "2026-05-12 15:10:17",
+                                "modifiedAt": "2026-05-12 15:10:17",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Mini Jar Candles(3).jpeg",
-                                "createdAt": "2026-05-11 12:21:02",
-                                "modifiedAt": "2026-05-11 12:21:02",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "photo frame of Rehbar e muazzam(3).jpeg",
-                                "createdAt": "2026-05-11 12:17:50",
-                                "modifiedAt": "2026-05-11 12:18:49",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "photo frame of Rehbar e muazzam(4).jpeg",
-                                "createdAt": "2026-05-11 12:17:50",
-                                "modifiedAt": "2026-05-11 12:18:49",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "photo frame of Rehbar e muazzam (1).jpeg",
-                                "createdAt": "2026-05-11 12:17:50",
-                                "modifiedAt": "2026-05-11 12:18:49",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "photo frame of Rehbar e muazzam(2).jpeg",
-                                "createdAt": "2026-05-11 12:17:50",
-                                "modifiedAt": "2026-05-11 12:18:49",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Mini Jar Candles(2).jpeg",
-                                "createdAt": "2026-05-11 12:17:30",
-                                "modifiedAt": "2026-05-11 12:17:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Tasbeeh Set(1).jpeg",
-                                "createdAt": "2026-05-08 14:07:21",
-                                "modifiedAt": "2026-05-08 14:07:22",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Batch Set(1).jpeg",
-                                "createdAt": "2026-05-05 12:47:56",
-                                "modifiedAt": "2026-05-05 12:57:12",
+                                "name": "Handkerchief Set(1).jpeg",
+                                "createdAt": "2026-05-05 12:52:19",
+                                "modifiedAt": "2026-05-05 12:52:19",
                                 "isNewToday": false
                         },
                         {
@@ -1122,15 +746,51 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Handkerchief Set(1).jpeg",
-                                "createdAt": "2026-05-05 12:52:19",
-                                "modifiedAt": "2026-05-05 12:52:19",
+                                "name": "Handkerchief Set(4).jpeg",
+                                "createdAt": "2026-05-05 12:42:50",
+                                "modifiedAt": "2026-05-05 12:41:17",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Mini Janamaz Pouch Set(2).jpeg",
-                                "createdAt": "2026-05-05 12:49:19",
-                                "modifiedAt": "2026-05-05 12:49:20",
+                                "name": "Head band for kids(1).jpeg",
+                                "createdAt": "2026-05-11 13:24:14",
+                                "modifiedAt": "2026-05-11 13:24:14",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Majlis Head Bands(1).jpeg",
+                                "createdAt": "2026-05-11 17:10:14",
+                                "modifiedAt": "2026-05-11 17:10:15",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Masoomeen Names -Wall Roll(1).jpeg",
+                                "createdAt": "2026-05-11 17:11:53",
+                                "modifiedAt": "2026-05-11 17:12:27",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Masoomeen Names -Wall Roll(2).jpeg",
+                                "createdAt": "2026-05-11 17:11:53",
+                                "modifiedAt": "2026-05-11 17:12:54",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Masoomeen Names -Wall Roll(3).jpeg",
+                                "createdAt": "2026-05-11 17:11:53",
+                                "modifiedAt": "2026-05-11 17:13:05",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Masoomeen Names -Wall Roll(4).jpeg",
+                                "createdAt": "2026-05-11 17:11:53",
+                                "modifiedAt": "2026-05-11 17:13:16",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Masoomeen Names -Wall Roll(5).jpeg",
+                                "createdAt": "2026-05-11 17:11:53",
+                                "modifiedAt": "2026-05-11 17:13:24",
                                 "isNewToday": false
                         },
                         {
@@ -1140,9 +800,9 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Mini Jar Candles(1).jpeg",
-                                "createdAt": "2026-05-05 12:46:32",
-                                "modifiedAt": "2026-05-05 12:42:51",
+                                "name": "Mini Janamaz Pouch Set(2).jpeg",
+                                "createdAt": "2026-05-05 12:49:19",
+                                "modifiedAt": "2026-05-05 12:49:20",
                                 "isNewToday": false
                         },
                         {
@@ -1152,15 +812,51 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Batch Set(2).jpeg",
-                                "createdAt": "2026-05-05 12:43:01",
-                                "modifiedAt": "2026-05-05 12:42:09",
+                                "name": "Mini Jar Candles(1).jpeg",
+                                "createdAt": "2026-05-05 12:46:32",
+                                "modifiedAt": "2026-05-05 12:42:51",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Handkerchief Set(4).jpeg",
-                                "createdAt": "2026-05-05 12:42:50",
-                                "modifiedAt": "2026-05-05 12:41:17",
+                                "name": "Mini Jar Candles(2).jpeg",
+                                "createdAt": "2026-05-11 12:17:30",
+                                "modifiedAt": "2026-05-11 12:17:30",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Mini Jar Candles(3).jpeg",
+                                "createdAt": "2026-05-11 12:21:02",
+                                "modifiedAt": "2026-05-11 12:21:02",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Mini Jar Candles(4).jpeg",
+                                "createdAt": "2026-05-11 12:21:02",
+                                "modifiedAt": "2026-05-11 12:21:02",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "photo frame of Rehbar e muazzam (1).jpeg",
+                                "createdAt": "2026-05-11 12:17:50",
+                                "modifiedAt": "2026-05-11 12:18:49",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "photo frame of Rehbar e muazzam(2).jpeg",
+                                "createdAt": "2026-05-11 12:17:50",
+                                "modifiedAt": "2026-05-11 12:18:49",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "photo frame of Rehbar e muazzam(3).jpeg",
+                                "createdAt": "2026-05-11 12:17:50",
+                                "modifiedAt": "2026-05-11 12:18:49",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "photo frame of Rehbar e muazzam(4).jpeg",
+                                "createdAt": "2026-05-11 12:17:50",
+                                "modifiedAt": "2026-05-11 12:18:49",
                                 "isNewToday": false
                         },
                         {
@@ -1170,9 +866,21 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Watch Set(2).jpeg",
-                                "createdAt": "2026-05-05 12:42:08",
-                                "modifiedAt": "2026-05-05 12:39:45",
+                                "name": "Sipper Set(2).jpeg",
+                                "createdAt": "2026-05-05 12:41:01",
+                                "modifiedAt": "2026-05-05 12:41:01",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Tasbeeh Set(1).jpeg",
+                                "createdAt": "2026-05-08 14:07:21",
+                                "modifiedAt": "2026-05-08 14:07:22",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Tasbih -Sajdegah Box(1).jpeg",
+                                "createdAt": "2026-05-11 13:00:24",
+                                "modifiedAt": "2026-05-11 13:00:24",
                                 "isNewToday": false
                         },
                         {
@@ -1182,9 +890,15 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Sipper Set(2).jpeg",
-                                "createdAt": "2026-05-05 12:41:01",
-                                "modifiedAt": "2026-05-05 12:41:01",
+                                "name": "Watch Set(1).jpeg",
+                                "createdAt": "2026-05-05 12:39:30",
+                                "modifiedAt": "2026-05-05 12:39:31",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Watch Set(2).jpeg",
+                                "createdAt": "2026-05-05 12:42:08",
+                                "modifiedAt": "2026-05-05 12:39:45",
                                 "isNewToday": false
                         },
                         {
@@ -1194,10 +908,10 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Watch Set(1).jpeg",
-                                "createdAt": "2026-05-05 12:39:30",
-                                "modifiedAt": "2026-05-05 12:39:31",
-                                "isNewToday": false
+                                "name": "White Jute Window Bag(1).jpeg",
+                                "createdAt": "2026-05-13 08:05:47",
+                                "modifiedAt": "2026-05-11 13:17:02",
+                                "isNewToday": true
                         }
                 ]
         },
@@ -1205,109 +919,67 @@
                 "path": "assets/Imambargah - Zari Tabarruk/",
                 "files": [
                         {
-                                "name": "Zulfiqar(1).mp4",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-07 12:57:35",
+                                "name": "Alam Panja(1).jpeg",
+                                "createdAt": "2026-05-11 16:46:46",
+                                "modifiedAt": "2026-05-08 14:02:00",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Pillow Cover(5).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-09 11:13:38",
+                                "name": "Alam Panja(4).jpeg",
+                                "createdAt": "2026-05-11 16:46:46",
+                                "modifiedAt": "2026-05-08 14:02:06",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Pillow Cover(4).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-09 11:13:52",
+                                "name": "Alam Panja(12).jpeg",
+                                "createdAt": "2026-05-11 16:46:46",
+                                "modifiedAt": "2026-05-08 14:08:40",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Pillow Cover(3).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-09 11:12:37",
+                                "name": "Alam Panja(13).jpeg",
+                                "createdAt": "2026-05-11 16:46:46",
+                                "modifiedAt": "2026-05-08 14:08:49",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Pillow Cover(2).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-08 14:04:35",
+                                "name": "Alam Panja(14).jpeg",
+                                "createdAt": "2026-05-11 16:46:46",
+                                "modifiedAt": "2026-05-08 14:01:10",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Pillow Cover(1).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-08 14:04:45",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Pantajan Name Set(4).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-10 11:06:07",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Pantajan Name Set(3).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-10 11:06:07",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Pantajan Name Set(2).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-10 11:06:07",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Pantajan Name Set(1).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-10 11:06:07",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Safina Boat(1).jpeg",
-                                "createdAt": "2026-05-11 16:46:49",
-                                "modifiedAt": "2026-05-07 12:57:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Banner(5).jpeg",
-                                "createdAt": "2026-05-11 16:46:48",
-                                "modifiedAt": "2026-05-08 14:05:37",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Banner(4).jpeg",
-                                "createdAt": "2026-05-11 16:46:48",
-                                "modifiedAt": "2026-05-08 14:05:29",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Banner(3).jpeg",
-                                "createdAt": "2026-05-11 16:46:48",
-                                "modifiedAt": "2026-05-08 14:05:20",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Banner(2).jpeg",
-                                "createdAt": "2026-05-11 16:46:48",
-                                "modifiedAt": "2026-05-08 14:05:14",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Banner(1).jpeg",
-                                "createdAt": "2026-05-11 16:46:48",
-                                "modifiedAt": "2026-05-08 14:04:52",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(9).jpeg",
+                                "name": "Alam Patka(1).jpeg",
                                 "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-10 11:07:45",
+                                "modifiedAt": "2026-05-08 14:07:48",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Patka(8).jpeg",
+                                "name": "Alam Patka(2).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-08 14:07:55",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Alam Patka(3).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-08 14:08:10",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Alam Patka(4).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-08 14:08:18",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Alam Patka(5).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-08 14:08:32",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Alam Patka(6).jpeg",
                                 "createdAt": "2026-05-11 16:46:47",
                                 "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
@@ -1319,61 +991,13 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Patka(6).jpeg",
+                                "name": "Alam Patka(8).jpeg",
                                 "createdAt": "2026-05-11 16:46:47",
                                 "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Patka(5).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-08 14:08:32",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(4).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-08 14:08:18",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(3).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-08 14:08:10",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(2).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-08 14:07:55",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(15).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-10 11:07:45",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(14).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-10 11:07:45",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(13).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-10 11:07:45",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(12).jpeg",
-                                "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-10 11:07:45",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Alam Patka(11).jpeg",
+                                "name": "Alam Patka(9).jpeg",
                                 "createdAt": "2026-05-11 16:46:47",
                                 "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
@@ -1385,39 +1009,129 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Patka(1).jpeg",
+                                "name": "Alam Patka(11).jpeg",
                                 "createdAt": "2026-05-11 16:46:47",
-                                "modifiedAt": "2026-05-08 14:07:48",
+                                "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Panja(4).jpeg",
-                                "createdAt": "2026-05-11 16:46:46",
-                                "modifiedAt": "2026-05-08 14:02:06",
+                                "name": "Alam Patka(12).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Panja(14).jpeg",
-                                "createdAt": "2026-05-11 16:46:46",
-                                "modifiedAt": "2026-05-08 14:01:10",
+                                "name": "Alam Patka(13).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Panja(13).jpeg",
-                                "createdAt": "2026-05-11 16:46:46",
-                                "modifiedAt": "2026-05-08 14:08:49",
+                                "name": "Alam Patka(14).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Panja(12).jpeg",
-                                "createdAt": "2026-05-11 16:46:46",
-                                "modifiedAt": "2026-05-08 14:08:40",
+                                "name": "Alam Patka(15).jpeg",
+                                "createdAt": "2026-05-11 16:46:47",
+                                "modifiedAt": "2026-05-10 11:07:45",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Alam Panja(1).jpeg",
-                                "createdAt": "2026-05-11 16:46:46",
-                                "modifiedAt": "2026-05-08 14:02:00",
+                                "name": "Banner(1).jpeg",
+                                "createdAt": "2026-05-11 16:46:48",
+                                "modifiedAt": "2026-05-08 14:04:52",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Banner(2).jpeg",
+                                "createdAt": "2026-05-11 16:46:48",
+                                "modifiedAt": "2026-05-08 14:05:14",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Banner(3).jpeg",
+                                "createdAt": "2026-05-11 16:46:48",
+                                "modifiedAt": "2026-05-08 14:05:20",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Banner(4).jpeg",
+                                "createdAt": "2026-05-11 16:46:48",
+                                "modifiedAt": "2026-05-08 14:05:29",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Banner(5).jpeg",
+                                "createdAt": "2026-05-11 16:46:48",
+                                "modifiedAt": "2026-05-08 14:05:37",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pantajan Name Set(1).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-10 11:06:07",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pantajan Name Set(2).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-10 11:06:07",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pantajan Name Set(3).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-10 11:06:07",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pantajan Name Set(4).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-10 11:06:07",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pillow Cover(1).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-08 14:04:45",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pillow Cover(2).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-08 14:04:35",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pillow Cover(3).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-09 11:12:37",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pillow Cover(4).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-09 11:13:52",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Pillow Cover(5).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-09 11:13:38",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Safina Boat(1).jpeg",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-07 12:57:08",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Zulfiqar(1).mp4",
+                                "createdAt": "2026-05-11 16:46:49",
+                                "modifiedAt": "2026-05-07 12:57:35",
                                 "isNewToday": false
                         }
                 ]
@@ -1426,117 +1140,15 @@
                 "path": "assets/Islamic Festivals & Wedding Gifts/",
                 "files": [
                         {
-                                "name": "Crotia Potli(8).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
+                                "name": "Candle Set(1).jpeg",
+                                "createdAt": "2026-05-10 11:08:17",
+                                "modifiedAt": "2026-05-10 11:08:18",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Potli(4).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(5).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(2).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(7).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:30",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Potli(6).jpeg",
-                                "createdAt": "2026-05-13 09:30:00",
-                                "modifiedAt": "2026-05-11 12:16:29",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(1).jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(2).jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(3).jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(4).jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(5).jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(6).jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(7.jpeg",
-                                "createdAt": "2026-05-13 08:28:34",
-                                "modifiedAt": "2026-05-13 08:28:34",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(9).jpeg",
-                                "createdAt": "2026-05-13 08:28:33",
-                                "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(8).jpeg",
-                                "createdAt": "2026-05-13 08:28:33",
-                                "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(10).jpeg",
-                                "createdAt": "2026-05-13 08:28:33",
-                                "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(11).jpeg",
-                                "createdAt": "2026-05-13 08:28:33",
-                                "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Utility Pouch(12).jpeg",
-                                "createdAt": "2026-05-13 08:28:33",
-                                "modifiedAt": "2026-05-13 08:28:33",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Vase(1).jpeg",
-                                "createdAt": "2026-05-12 15:10:00",
-                                "modifiedAt": "2026-05-12 15:10:00",
+                                "name": "Canvas Window Bag Set(1).jpeg",
+                                "createdAt": "2026-05-12 15:08:42",
+                                "modifiedAt": "2026-05-12 15:08:42",
                                 "isNewToday": false
                         },
                         {
@@ -1552,43 +1164,19 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Keychain(12).jpeg",
+                                "name": "Crotia Keychain(1).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Keychain(14).jpeg",
+                                "name": "Crotia Keychain(2).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Keychain(13).jpeg",
-                                "createdAt": "2026-05-12 15:09:08",
-                                "modifiedAt": "2026-05-12 15:09:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Keychain(11).jpeg",
-                                "createdAt": "2026-05-12 15:09:08",
-                                "modifiedAt": "2026-05-12 15:09:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Keychain(10).jpeg",
-                                "createdAt": "2026-05-12 15:09:08",
-                                "modifiedAt": "2026-05-12 15:09:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Keychain(9).jpeg",
-                                "createdAt": "2026-05-12 15:09:08",
-                                "modifiedAt": "2026-05-12 15:09:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Crotia Keychain(7).jpeg",
+                                "name": "Crotia Keychain(3).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
@@ -1612,45 +1200,51 @@
                                 "isNewToday": false
                         },
                         {
+                                "name": "Crotia Keychain(7).jpeg",
+                                "createdAt": "2026-05-12 15:09:08",
+                                "modifiedAt": "2026-05-12 15:09:08",
+                                "isNewToday": false
+                        },
+                        {
                                 "name": "Crotia Keychain(8).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Keychain(3).jpeg",
+                                "name": "Crotia Keychain(9).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Keychain(2).jpeg",
+                                "name": "Crotia Keychain(10).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Keychain(1).jpeg",
+                                "name": "Crotia Keychain(11).jpeg",
                                 "createdAt": "2026-05-12 15:09:08",
                                 "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Canvas Window Bag Set(1).jpeg",
-                                "createdAt": "2026-05-12 15:08:42",
-                                "modifiedAt": "2026-05-12 15:08:42",
+                                "name": "Crotia Keychain(12).jpeg",
+                                "createdAt": "2026-05-12 15:09:08",
+                                "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Hadiya Gift Combo(1).jpeg",
-                                "createdAt": "2026-05-11 17:09:18",
-                                "modifiedAt": "2026-05-11 17:09:18",
+                                "name": "Crotia Keychain(13).jpeg",
+                                "createdAt": "2026-05-12 15:09:08",
+                                "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Crotia Potli(3).jpeg",
-                                "createdAt": "2026-05-11 13:40:46",
-                                "modifiedAt": "2026-05-11 12:16:30",
+                                "name": "Crotia Keychain(14).jpeg",
+                                "createdAt": "2026-05-12 15:09:08",
+                                "modifiedAt": "2026-05-12 15:09:08",
                                 "isNewToday": false
                         },
                         {
@@ -1660,15 +1254,15 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Heavy Malasian Georgette Stole(4).jpeg",
-                                "createdAt": "2026-05-11 13:00:24",
-                                "modifiedAt": "2026-05-11 13:00:24",
+                                "name": "Crotia Potli(3).jpeg",
+                                "createdAt": "2026-05-11 13:40:46",
+                                "modifiedAt": "2026-05-11 12:16:30",
                                 "isNewToday": false
                         },
                         {
-                                "name": "Heavy Chiffon Allover Diamond Work Stole(1).jpeg",
-                                "createdAt": "2026-05-11 13:00:24",
-                                "modifiedAt": "2026-05-11 13:00:24",
+                                "name": "Crotia Vase(1).jpeg",
+                                "createdAt": "2026-05-12 15:10:00",
+                                "modifiedAt": "2026-05-12 15:10:00",
                                 "isNewToday": false
                         },
                         {
@@ -1678,81 +1272,9 @@
                                 "isNewToday": false
                         },
                         {
-                                "name": "Candle Set(1).jpeg",
-                                "createdAt": "2026-05-10 11:08:17",
-                                "modifiedAt": "2026-05-10 11:08:18",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Quran Box Set(4).jpeg",
-                                "createdAt": "2026-05-08 17:43:38",
-                                "modifiedAt": "2026-05-09 11:15:22",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Quran Box Set(2).jpeg",
-                                "createdAt": "2026-05-08 14:05:54",
-                                "modifiedAt": "2026-05-09 11:15:07",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Tasbeeh Set(3).jpeg",
-                                "createdAt": "2026-05-08 17:44:21",
-                                "modifiedAt": "2026-05-08 17:44:21",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Tasbeeh Set(1).jpeg",
-                                "createdAt": "2026-05-08 17:44:21",
-                                "modifiedAt": "2026-05-08 17:44:21",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Tasbeeh Set(2).jpeg",
-                                "createdAt": "2026-05-08 17:44:21",
-                                "modifiedAt": "2026-05-08 17:44:21",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(1)-DESKTOP-5HBJNR6.jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(2)-DESKTOP-5HBJNR6.jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(2).jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(3).jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "ImamZameen Set(1).jpeg",
-                                "createdAt": "2026-05-08 17:44:08",
-                                "modifiedAt": "2026-05-08 17:44:08",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Quran Box Set(3).jpeg",
-                                "createdAt": "2026-05-08 17:43:38",
-                                "modifiedAt": "2026-05-08 17:43:38",
-                                "isNewToday": false
-                        },
-                        {
-                                "name": "Quran Box Set(1).jpeg",
-                                "createdAt": "2026-05-08 17:43:38",
-                                "modifiedAt": "2026-05-08 17:43:38",
+                                "name": "Hadiya Gift Combo(1).jpeg",
+                                "createdAt": "2026-05-11 17:09:18",
+                                "modifiedAt": "2026-05-11 17:09:18",
                                 "isNewToday": false
                         },
                         {
@@ -1826,6 +1348,150 @@
                                 "createdAt": "2026-05-08 17:25:22",
                                 "modifiedAt": "2026-05-08 17:25:22",
                                 "isNewToday": false
+                        },
+                        {
+                                "name": "Heavy Chiffon Allover Diamond Work Stole(1).jpeg",
+                                "createdAt": "2026-05-11 13:00:24",
+                                "modifiedAt": "2026-05-11 13:00:24",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Heavy Malasian Georgette Stole(4).jpeg",
+                                "createdAt": "2026-05-11 13:00:24",
+                                "modifiedAt": "2026-05-11 13:00:24",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "ImamZameen Set(1).jpeg",
+                                "createdAt": "2026-05-08 17:44:08",
+                                "modifiedAt": "2026-05-08 17:44:08",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "ImamZameen Set(2).jpeg",
+                                "createdAt": "2026-05-08 17:44:08",
+                                "modifiedAt": "2026-05-08 17:44:08",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "ImamZameen Set(3).jpeg",
+                                "createdAt": "2026-05-08 17:44:08",
+                                "modifiedAt": "2026-05-08 17:44:08",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Quran Box Set(1).jpeg",
+                                "createdAt": "2026-05-08 17:43:38",
+                                "modifiedAt": "2026-05-08 17:43:38",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Quran Box Set(2).jpeg",
+                                "createdAt": "2026-05-08 14:05:54",
+                                "modifiedAt": "2026-05-09 11:15:07",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Quran Box Set(3).jpeg",
+                                "createdAt": "2026-05-08 17:43:38",
+                                "modifiedAt": "2026-05-08 17:43:38",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Quran Box Set(4).jpeg",
+                                "createdAt": "2026-05-08 17:43:38",
+                                "modifiedAt": "2026-05-09 11:15:22",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Tasbeeh Set(1).jpeg",
+                                "createdAt": "2026-05-08 17:44:21",
+                                "modifiedAt": "2026-05-08 17:44:21",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Tasbeeh Set(2).jpeg",
+                                "createdAt": "2026-05-08 17:44:21",
+                                "modifiedAt": "2026-05-08 17:44:21",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Tasbeeh Set(3).jpeg",
+                                "createdAt": "2026-05-08 17:44:21",
+                                "modifiedAt": "2026-05-08 17:44:21",
+                                "isNewToday": false
+                        },
+                        {
+                                "name": "Utility Pouch(1).jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(2).jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(3).jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(4).jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(5).jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(6).jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(7.jpeg",
+                                "createdAt": "2026-05-13 08:28:34",
+                                "modifiedAt": "2026-05-13 08:28:34",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(8).jpeg",
+                                "createdAt": "2026-05-13 08:28:33",
+                                "modifiedAt": "2026-05-13 08:28:33",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(9).jpeg",
+                                "createdAt": "2026-05-13 08:28:33",
+                                "modifiedAt": "2026-05-13 08:28:33",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(10).jpeg",
+                                "createdAt": "2026-05-13 08:28:33",
+                                "modifiedAt": "2026-05-13 08:28:33",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(11).jpeg",
+                                "createdAt": "2026-05-13 08:28:33",
+                                "modifiedAt": "2026-05-13 08:28:33",
+                                "isNewToday": true
+                        },
+                        {
+                                "name": "Utility Pouch(12).jpeg",
+                                "createdAt": "2026-05-13 08:28:33",
+                                "modifiedAt": "2026-05-13 08:28:33",
+                                "isNewToday": true
                         }
                 ]
         }
@@ -1847,192 +1513,9 @@
             .replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "");
     }
 
-    let inquiryCart = [];
-
-    function showToast(message) {
-        const toast = document.getElementById("toastMessage");
-        if (!toast) return;
-        toast.textContent = message;
-        toast.classList.add("show");
-        window.clearTimeout(showToast.timeoutId);
-        showToast.timeoutId = window.setTimeout(() => {
-            toast.classList.remove("show");
-        }, 1800);
-    }
-
-    function getProductKey(fileUrl) {
-        return String(fileUrl || "").toLowerCase();
-    }
-
-    function updateCartCount() {
-        const count = document.getElementById("cartCount");
-        if (count) count.textContent = inquiryCart.length;
-
-        document.querySelectorAll(".product-card").forEach(card => {
-            const key = card.getAttribute("data-product-key");
-            const exists = inquiryCart.some(item => item.key === key);
-            card.classList.toggle("in-cart", exists);
-        });
-    }
-
-    function addToCart(productName, fileUrl, isVideo) {
-        const key = getProductKey(fileUrl);
-        const alreadyAdded = inquiryCart.some(item => item.key === key);
-
-        if (alreadyAdded) {
-            showToast("This product is already in your cart.");
-            return;
-        }
-
-        inquiryCart.push({
-            key,
-            productName,
-            fileUrl,
-            isVideo: Boolean(isVideo)
-        });
-
-        updateCartCount();
-        showToast("Added to inquiry cart.");
-    }
-
-    function removeFromCart(key) {
-        inquiryCart = inquiryCart.filter(item => item.key !== key);
-        updateCartCount();
-        renderCart();
-    }
-
-    function clearCartItems() {
-        inquiryCart = [];
-        updateCartCount();
-        renderCart();
-    }
-
-    function openZoom(productName, fileUrl, isVideo) {
-        const zoomModal = document.getElementById("zoomModal");
-        const zoomBody = document.getElementById("zoomBody");
-        const zoomTitle = document.getElementById("zoomTitle");
-        const safeName = getProductDisplayName(productName);
-
-        if (!zoomModal || !zoomBody) return;
-
-        if (zoomTitle) zoomTitle.textContent = safeName;
-
-        const media = isVideo
-            ? `<video src="${fileUrl}" controls autoplay playsinline></video>`
-            : `<img src="${fileUrl}" alt="${safeName}">`;
-
-        zoomBody.innerHTML = `
-            ${media}
-            <div class="zoom-product-name">${safeName}</div>
-            <div class="product-actions">
-                <button class="product-btn cart-btn" onclick="addToCart('${escapeJs(productName)}', '${escapeJs(fileUrl)}', ${Boolean(isVideo)})">Add to Inquiry Cart</button>
-            </div>
-        `;
-
-        zoomModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeZoom() {
-        const zoomModal = document.getElementById("zoomModal");
-        const zoomBody = document.getElementById("zoomBody");
-        if (zoomModal) zoomModal.classList.remove("active");
-        if (zoomBody) zoomBody.innerHTML = "";
-        document.body.style.overflow = "";
-    }
-
-    function closeZoomFromOverlay(event) {
-        if (event.target && event.target.id === "zoomModal") {
-            closeZoom();
-        }
-    }
-
-    function openCart() {
-        renderCart();
-        const cartModal = document.getElementById("cartModal");
-        if (cartModal) {
-            cartModal.classList.add("active");
-            document.body.style.overflow = "hidden";
-        }
-    }
-
-    function closeCart() {
-        const cartModal = document.getElementById("cartModal");
-        if (cartModal) cartModal.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-    function closeCartFromOverlay(event) {
-        if (event.target && event.target.id === "cartModal") {
-            closeCart();
-        }
-    }
-
-    function renderCart() {
-        const cartBody = document.getElementById("cartBody");
-        if (!cartBody) return;
-
-        if (inquiryCart.length === 0) {
-            cartBody.innerHTML = `<div class="cart-empty">Your inquiry cart is empty. Add products first, then send one WhatsApp inquiry.</div>`;
-            return;
-        }
-
-        const itemsHtml = inquiryCart.map(item => {
-            const safeName = getProductDisplayName(item.productName);
-            const media = item.isVideo
-                ? `<video src="${item.fileUrl}" muted playsinline></video>`
-                : `<img src="${item.fileUrl}" alt="${safeName}">`;
-
-            return `
-                <div class="cart-item">
-                    ${media}
-                    <div>
-                        <div class="cart-item-title">${safeName}</div>
-                    </div>
-                    <button class="remove-cart-btn" onclick="removeFromCart('${escapeJs(item.key)}')">Remove</button>
-                </div>
-            `;
-        }).join("");
-
-        cartBody.innerHTML = `
-            ${itemsHtml}
-            <div class="cart-footer-actions">
-                <button class="secondary-action" onclick="clearCartItems()">Clear Cart</button>
-                <button class="primary-action" onclick="sendCartInquiry()">Send Inquiry on WhatsApp</button>
-            </div>
-        `;
-    }
-
-    function sendCartInquiry() {
-        if (inquiryCart.length === 0) {
-            showToast("Please add at least one product.");
-            return;
-        }
-
-        const lines = [
-            "Hi, I am interested in these products:",
-            ""
-        ];
-
-        inquiryCart.forEach((item, index) => {
-            const fullImageUrl = new URL(item.fileUrl, window.location.href).href;
-            lines.push(`${index + 1}. ${getProductDisplayName(item.productName)}`);
-            lines.push(`Product Image: ${fullImageUrl}`);
-            lines.push("");
-        });
-
-        lines.push("Please share price and delivery details.");
-
-        const message = encodeURIComponent(lines.join("\n"));
+    function sendWhatsApp(productName) {
+        const message = encodeURIComponent(`Hi, I am interested in this product: ${productName}`);
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-    }
-
-    function escapeJs(value) {
-        return String(value || "")
-            .replace(/\\/g, "\\\\")
-            .replace(/'/g, "\\'")
-            .replace(/\n/g, "\\n")
-            .replace(/\r/g, "");
     }
 
     function getFileName(fileItem) {
@@ -2074,7 +1557,7 @@
                 const card = document.createElement("div");
                 card.className = "product-card";
                 card.setAttribute("data-search", normalizeSearchText(displayName));
-                card.setAttribute("data-product-key", getProductKey(fileUrl));
+                card.onclick = () => sendWhatsApp(fileName);
 
                 if (tooltip) {
                     card.setAttribute("title", tooltip);
@@ -2085,7 +1568,7 @@
                     : `<img src="${fileUrl}" alt="${fileName}" loading="lazy">`;
 
                 const newTodayBadge = isNewToday
-                    ? `<span class="new-today-badge" title="Created or modified today">✓</span><span class="new-today-text">Added Today</span>`
+                    ? `<span class="new-today-badge" title="Created or modified today">✓</span><span class="new-today-text">Today</span>`
                     : "";
 
                 card.innerHTML = `
@@ -2095,10 +1578,6 @@
                             <span>${displayName}</span>
                             ${newTodayBadge}
                         </h3>
-                        <div class="product-actions">
-                            <button class="product-btn zoom-btn" onclick="openZoom('${escapeJs(fileName)}', '${escapeJs(fileUrl)}', ${isVideo})">View Full Image</button>
-                            <button class="product-btn cart-btn" onclick="addToCart('${escapeJs(fileName)}', '${escapeJs(fileUrl)}', ${isVideo})">Add to Cart</button>
-                        </div>
                     </div>
                 `;
 
@@ -2205,14 +1684,6 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         renderProducts();
-        updateCartCount();
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeZoom();
-            closeCart();
-        }
     });
 </script>
 
